@@ -6,8 +6,30 @@ Introduction
 ``plone.requirements.txt`` is the collection of plone releases each requirements.txt file is compiled from version.cfg file.
 
 
+How To Use
+==========
+
+More than one ways you can use each requirements.txt file.
+
+
+Include in local requirements.txt
+---------------------------------
+
+So easy to include as `recursive requirements as described here <https://pip.readthedocs.io/en/1.1/requirements.html#recursive-requirements>`_
+
+Example::
+
+    -r https://raw.githubusercontent.com/collective/plone.requirements.txt/master/dist/<your plone release version>/requirements.txt
+
+
+Directly mention to pip executable
+----------------------------------
+
+
+``$ <path>/pip install -r https://raw.githubusercontent.com/collective/plone.requirements.txt/master/dist/<your plone release version>/requirements.txt``
+
 FAQ
----
+===
 
 Distribution Not Found
 ----------------------
@@ -15,6 +37,7 @@ Distribution Not Found
 Sometimes pip might not found old/zope/plone specific packages, in that case you will need to bellows links in your requirements.txt file
 
 Example::
+
     --find-links http://dist.plone.org/packages'
     --find-links http://dist.plone.org/thirdparty
     --trusted-host dist.plone.org'
@@ -22,6 +45,8 @@ Example::
     --trusted-host download.zope.org
     --find-links http://effbot.org/downloads
     --trusted-host effbot.org
+    --find-links http://pypi.python.org/simple/
+    --trusted-host pypi.python.org
 
 
 Contributors
