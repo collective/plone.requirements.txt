@@ -248,7 +248,7 @@ async def generate_requirements_txt(
 
         combined_versions = OrderedDict()
 
-        for versions in versions_stack:
+        for versions in reversed(versions_stack):
             combined_versions.update(versions)
 
         with open(str(dist_dir / 'requirements.txt'), 'w') as f:
@@ -259,12 +259,7 @@ async def generate_requirements_txt(
             # add trusted external links
             f.write(
                 '--find-links http://dist.plone.org/thirdparty\n'
-                '--find-links http://dist.plone.org/packages\n'
                 '--trusted-host dist.plone.org\n'
-                '--find-links http://download.zope.org/distribution/\n'
-                '--trusted-host download.zope.org\n'
-                '--find-links http://effbot.org/downloads\n'
-                '--trusted-host effbot.org\n'
             )
             for package, version in combined_versions.items():
                 if version.startswith('<') or version.startswith('>'):
