@@ -1,0 +1,11 @@
+aiohttp
+aiodns
+cchardet
+ujson
+tqdm
+zc.buildout
+setuptools
+pip
+beautifulsoup4
+lxml
+flake8
