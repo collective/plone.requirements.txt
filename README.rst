@@ -6,6 +6,24 @@ Introduction
 ``plone.requirements.txt`` is the collection of plone releases each requirements.txt file is compiled from version.cfg file.
 
 
+FAQ
+---
+
+Distribution Not Found
+----------------------
+
+Sometimes pip might not found old/zope/plone specific packages, in that case you will need to bellows links in your requirements.txt file
+
+Example::
+    --find-links http://dist.plone.org/packages'
+    --find-links http://dist.plone.org/thirdparty
+    --trusted-host dist.plone.org'
+    --find-links http://download.zope.org/distribution/
+    --trusted-host download.zope.org
+    --find-links http://effbot.org/downloads
+    --trusted-host effbot.org
+
+
 Contributors
 ============
 
